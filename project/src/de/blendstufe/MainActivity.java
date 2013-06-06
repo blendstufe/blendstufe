@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -168,6 +169,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             View rootView = inflater.inflate(R.layout.fragment_main_dummy, container, false);
             TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
             dummyTextView.setText(getArguments().getString("Title"));
+            
+            
+            WebView web=(WebView) rootView.findViewById(R.id.webView1);
+            web.loadUrl("http://www.blendstufe.de");       
             return rootView;
         }
     }
